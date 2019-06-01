@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCrackerTest", "CodeCrackerTest\CodeCrackerTest.csproj", "{E11829D6-5554-4AC6-BF24-8A5B0ECB1364}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeCrackerConsole", "CodeCrackerConsole\CodeCrackerConsole.csproj", "{E96AA1E6-7279-4C7A-B941-ABD7DCCE5010}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E11829D6-5554-4AC6-BF24-8A5B0ECB1364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E11829D6-5554-4AC6-BF24-8A5B0ECB1364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E11829D6-5554-4AC6-BF24-8A5B0ECB1364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E11829D6-5554-4AC6-BF24-8A5B0ECB1364}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E96AA1E6-7279-4C7A-B941-ABD7DCCE5010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E96AA1E6-7279-4C7A-B941-ABD7DCCE5010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E96AA1E6-7279-4C7A-B941-ABD7DCCE5010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E96AA1E6-7279-4C7A-B941-ABD7DCCE5010}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
