@@ -1,18 +1,18 @@
-namespace CodeCrackerTest
+ï»¿namespace CodeCrackerTest
 {
     using CodeCrackerConsole;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class DecrypterTest
+    public class EncrypterTest
     {
         [TestMethod]
-        [DataRow("Hello", "&£aad")]
-        [DataRow("World", "ldga(")]
-        [DataRow("Hello World", "&£aadldga(")]
+        [DataRow("&Â£aad", "hello")]
+        [DataRow("ldga(", "world")]
+        [DataRow("&Â£aadldga(", "helloworld")]
         public void Should_Crack_Message(string decryptMessage, string encryptMessage)
         {
-            var decriptionAction = new Decrypter(decryptMessage);
+            var decriptionAction = new Encrypter(decryptMessage);
             var decriptedMessage = decriptionAction.CrackMessage();
             Assert.AreEqual(encryptMessage, decriptedMessage);
         }
