@@ -1,17 +1,15 @@
 ﻿namespace CodeCrackerConsole
 {
+    using System;
+
     public class CodeCrackerFactory
     {
-        public Cracker DecideDecrypterAction(System.ConsoleKey userAction, string message)
+        public Cracker DecideDecrypterAction(ConsoleKey userAction, string message)
         {
-            if (userAction.Equals("E"))
-            {
-                return new Decrypter(message);
-            }
-            else
-            {
+            if (userAction.Equals(ConsoleKey.E))
                 return new Encrypter(message);
-            }
+            else
+                return new Decrypter(message);
         }
     }
 }

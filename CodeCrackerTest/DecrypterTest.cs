@@ -7,8 +7,8 @@ namespace CodeCrackerTest
     public class DecrypterTest
     {
         [TestMethod]
-        [DataRow("Hello", "&£aad")]
-        [DataRow("World", "ldga(")]
+        //[DataRow("Hello", "&£aad")]
+        //[DataRow("World", "ldga(")]
         [DataRow("Hello World", "&£aadldga(")]
         public void Should_Crack_Message(string decryptMessage, string encryptMessage)
         {

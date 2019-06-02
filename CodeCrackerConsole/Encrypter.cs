@@ -1,6 +1,6 @@
 ﻿namespace CodeCrackerConsole
 {
-    using CodeCrackerConsole.Glossary;
+    using CodeCrackerConsole.Alphabet;
     using System.Linq;
 
     public class Encrypter : Cracker
@@ -14,7 +14,7 @@
 
         public override string CrackMessage()
         {
-            var glossary = new AlphabetDecryption().GetKeyValuePairs();
+            var glossary = new AlphabetDecryption().GetAlphabet();
 
             var arrayOfMessages = Message.ToLower().ToCharArray();
 

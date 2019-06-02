@@ -1,50 +1,52 @@
-﻿namespace CodeCrackerConsole.Glossary
+﻿namespace CodeCrackerConsole.Alphabet
 {
     using System.Collections.Generic;
 
     public class AlphabetDecryption
     {
-        public AlphabetDecryption()
+        private Dictionary<string, string> Alphabet { get; set; }
+        
+        public Dictionary<string, string> GetAlphabet()
         {
-            LoadKeyValuePairs();
+            if (Alphabet != null)
+            {
+                return Alphabet;
+            }
+            else
+                return LoadKeyValuePairs();
         }
-
-        private Dictionary<string, string> Glossary { get; set; }
-
-        public Dictionary<string, string> GetKeyValuePairs()
+        
+        public Dictionary<string, string> LoadKeyValuePairs()
         {
-            return Glossary;
-        }
+            var alphabet = new Dictionary<string, string>();
+            alphabet.Add("a", "!");
+            alphabet.Add("b", ")");
+            alphabet.Add("c", @"""");
+            alphabet.Add("d", "(");
+            alphabet.Add("e", "£");
+            alphabet.Add("f", "*");
+            alphabet.Add("g", "%");
+            alphabet.Add("h", "&");
+            alphabet.Add("i", ">");
+            alphabet.Add("j", "<");
+            alphabet.Add("k", "@");
+            alphabet.Add("l", "a");
+            alphabet.Add("m", "b");
+            alphabet.Add("n", "c");
+            alphabet.Add("o", "d");
+            alphabet.Add("p", "e");
+            alphabet.Add("q", "f");
+            alphabet.Add("r", "g");
+            alphabet.Add("s", "h");
+            alphabet.Add("t", "i");
+            alphabet.Add("u", "j");
+            alphabet.Add("v", "k");
+            alphabet.Add("w", "l");
+            alphabet.Add("x", "m");
+            alphabet.Add("y", "n");
+            alphabet.Add("z", "o");
 
-        public void LoadKeyValuePairs()
-        {
-            Glossary = new Dictionary<string, string>();
-            Glossary.Add("a", "!");
-            Glossary.Add("b", ")");
-            Glossary.Add("c", @"""");
-            Glossary.Add("d", "(");
-            Glossary.Add("e", "£");
-            Glossary.Add("f", "*");
-            Glossary.Add("g", "%");
-            Glossary.Add("h", "&");
-            Glossary.Add("i", ">");
-            Glossary.Add("j", "<");
-            Glossary.Add("k", "@");
-            Glossary.Add("l", "a");
-            Glossary.Add("m", "b");
-            Glossary.Add("n", "c");
-            Glossary.Add("o", "d");
-            Glossary.Add("p", "e");
-            Glossary.Add("q", "f");
-            Glossary.Add("r", "g");
-            Glossary.Add("s", "h");
-            Glossary.Add("t", "i");
-            Glossary.Add("u", "j");
-            Glossary.Add("v", "k");
-            Glossary.Add("w", "l");
-            Glossary.Add("x", "m");
-            Glossary.Add("y", "n");
-            Glossary.Add("z", "o");
+            return alphabet;
         }
     }
 }
