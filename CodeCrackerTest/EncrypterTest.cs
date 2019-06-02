@@ -9,7 +9,7 @@
         [TestMethod]
         [DataRow("&£aad", "hello")]
         [DataRow("ldga(", "world")]
-        [DataRow("&£aadldga(", "helloworld")]
+        [DataRow("&£aad-ldga(", "hello world")]
         public void Should_Crack_Message(string decryptMessage, string encryptMessage)
         {
             var decriptionAction = new Encrypter(decryptMessage);

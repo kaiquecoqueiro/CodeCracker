@@ -7,9 +7,9 @@ namespace CodeCrackerTest
     public class DecrypterTest
     {
         [TestMethod]
-        //[DataRow("Hello", "&£aad")]
-        //[DataRow("World", "ldga(")]
-        [DataRow("Hello World", "&£aadldga(")]
+        [DataRow("Hello", "&£aad")]
+        [DataRow("World", "ldga(")]
+        [DataRow("Hello World", "&£aad-ldga(")]
         public void Should_Crack_Message(string decryptMessage, string encryptMessage)
         {
             var decriptionAction = new Decrypter(decryptMessage);

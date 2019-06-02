@@ -4,9 +4,14 @@
 
     public class AlphabetDecryption
     {
-        private Dictionary<string, string> Alphabet { get; set; }
+        public Dictionary<string, string> Alphabet { get; internal set; }
+
+        public AlphabetDecryption()
+        {
+            Alphabet = GetAlphabet();
+        }
         
-        public Dictionary<string, string> GetAlphabet()
+        private Dictionary<string, string> GetAlphabet()
         {
             if (Alphabet != null)
             {
@@ -16,7 +21,7 @@
                 return LoadKeyValuePairs();
         }
         
-        public Dictionary<string, string> LoadKeyValuePairs()
+        private Dictionary<string, string> LoadKeyValuePairs()
         {
             var alphabet = new Dictionary<string, string>();
             alphabet.Add("a", "!");
@@ -45,6 +50,8 @@
             alphabet.Add("x", "m");
             alphabet.Add("y", "n");
             alphabet.Add("z", "o");
+
+            alphabet.Add(" ", "-");
 
             return alphabet;
         }

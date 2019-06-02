@@ -5,6 +5,7 @@
 
     public class Encrypter : Cracker
     {
+        private AlphabetDecryption AlphabetDecryption;
         private string Message;
 
         public Encrypter(string message)
@@ -12,9 +13,17 @@
             Message = message;
         }
 
+        private AlphabetDecryption GetAlphabetDecryption()
+        {
+            if (AlphabetDecryption != null)
+                return AlphabetDecryption;
+            else
+                return AlphabetDecryption = new AlphabetDecryption();
+        }
+
         public override string CrackMessage()
         {
-            var glossary = new AlphabetDecryption().GetAlphabet();
+            var glossary = GetAlphabetDecryption().Alphabet;
 
             var arrayOfMessages = Message.ToLower().ToCharArray();
 
