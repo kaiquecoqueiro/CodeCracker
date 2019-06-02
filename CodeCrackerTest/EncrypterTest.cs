@@ -10,11 +10,11 @@
         [DataRow("&£aad", "hello")]
         [DataRow("ldga(", "world")]
         [DataRow("&£aad-ldga(", "hello world")]
-        public void Should_Crack_Message(string decryptMessage, string encryptMessage)
+        public void Should_Crack_Message(string encryptMessage, string decryptMessage)
         {
-            var decriptionAction = new Encrypter(decryptMessage);
-            var decriptedMessage = decriptionAction.CrackMessage();
-            Assert.AreEqual(encryptMessage, decriptedMessage);
+            var encryptionAction = new Encrypter(decryptMessage);
+            var encryptedMessage = encryptionAction.CrackMessage();
+            Assert.AreEqual(encryptMessage, encryptedMessage);
         }
     }
 }

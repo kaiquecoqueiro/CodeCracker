@@ -12,9 +12,9 @@ namespace CodeCrackerTest
         [DataRow("Hello World", "&£aad-ldga(")]
         public void Should_Crack_Message(string decryptMessage, string encryptMessage)
         {
-            var decriptionAction = new Decrypter(decryptMessage);
+            var decriptionAction = new Decrypter(encryptMessage);
             var decriptedMessage = decriptionAction.CrackMessage();
-            Assert.AreEqual(encryptMessage, decriptedMessage);
+            Assert.AreEqual(decryptMessage.ToLower(), decriptedMessage);
         }
     }
 }

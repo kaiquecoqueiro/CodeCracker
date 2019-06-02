@@ -1,6 +1,7 @@
 ﻿namespace CodeCrackerConsole
 {
     using CodeCrackerConsole.Alphabet;
+    using System.Linq;
 
     public class Decrypter : Cracker
     {
@@ -29,12 +30,7 @@
             string decodedMessage = string.Empty;
 
             for (int i = 0; i < arrayOfMessages.Length; i++)
-            {
-                string decodeString = string.Empty;
-                glossary.TryGetValue(arrayOfMessages[i].ToString(), out decodeString);
-
-                decodedMessage += decodeString;
-            }
+                decodedMessage += glossary.FirstOrDefault(x => x.Value == arrayOfMessages[i].ToString()).Key;
 
             return decodedMessage;
         }
