@@ -6,24 +6,24 @@
     {
         static void Main(string[] args)
         {
-            var userAction = Console.ReadKey().Key;
+            var userInterface = new UserInterfaceMessage();
 
+            Console.WriteLine(userInterface.GreetingMessage);
+            var userAction = Console.ReadKey().Key;
+            
             while (!userAction.Equals(ConsoleKey.F12))
             {
-                Console.WriteLine("Hello, Human!");
-                Console.WriteLine("Press E to encrypt or any key to decrypt a message.");
+                Console.WriteLine(userInterface.UserActionMessage);
                 userAction = Console.ReadKey().Key;
-                Console.WriteLine("");
 
-                Console.WriteLine($"Type the message that you wish to {(userAction.Equals(ConsoleKey.E) ? "encrypt" : "decrypt")}.");
+                Console.WriteLine(userInterface.EncryptionQuestionMessage, userInterface.WriteEncryptOrDecryptByKeyPress(userAction));
                 var message = Console.ReadLine();
 
                 var codeCracker = new CodeCrackerFactory().DecideDecrypterAction(userAction, message).CrackMessage();
 
-                Console.WriteLine($"Your {(userAction.Equals(ConsoleKey.E) ? "encrypt" : "decrypt")} message is: {codeCracker}");
-
-                Console.WriteLine("");
-                Console.ReadKey(); 
+                Console.WriteLine(userInterface.ResultMessage, userInterface.WriteEncryptOrDecryptByKeyPress(userAction), codeCracker);
+                Console.WriteLine(userInterface.ContinueInTheSystemMessage);
+                userAction = Console.ReadKey().Key; 
             }
         }
     }
